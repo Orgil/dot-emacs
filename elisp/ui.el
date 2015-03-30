@@ -1,7 +1,7 @@
 ; (set-default-font "Inconsolata 12")
 ;;; start maximized
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized))))) ;; start maximized
+; (custom-set-variables
+;  '(initial-frame-alist (quote ((fullscreen . maximized))))) ;; start maximized
 ; ;; more useful frame title
 ; (setq frame-title-format
 ;       '("" invocation-name (:eval (if (buffer-file-name)

@@ -9,6 +9,10 @@
 (setq make-backup-files nil)
 ;;; show other pair of brackets
 (show-paren-mode t)
+
+(setq ns-use-native-fullscreen nil)
+(sit-for 0)
+(toggle-frame-fullscreen)
 ;;; disable toolbar
 (tool-bar-mode -1)
 ;;; disable menubar
