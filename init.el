@@ -10,19 +10,21 @@
 (require 'ensure-packages)
 
 (setq ensure-packages
-  '(color-theme-sanityinc-tomorrow 
+  '(color-theme-sanityinc-tomorrow
      company
      web-mode
      php-mode
+     projectile
+     neotree
      rainbow-delimiters
-     fill-column-indicator
-     relative-line-numbers
+     hlinum
      powerline
      helm
+     helm-projectile
      multi-term
      dired+
-     markdown-mode 
-     php-mode 
+     markdown-mode
+     php-mode
      flycheck
      flycheck-pos-tip
      ))
@@ -31,11 +33,26 @@
 
 (require 'core)
 (require 'ui)
+
 ;;; webmode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(require 'projectile)
+
+(require 'neotree)
+(setq neo-window-width 28)
+(global-set-key [f4] 'neotree-toggle)
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
+(add-hook 'neotree-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-local-map (kbd "o") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "s") 'neotree-enter-vertical-split)
+            (define-key evil-normal-state-local-map (kbd "i") 'neotree-enter-horizontal-split)
+            (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 (require 'powerline)
 (powerline-center-evil-theme)
@@ -45,28 +62,13 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-;;; relative-line-numbers
-(add-hook 'prog-mode-hook 'relative-line-numbers-mode t)
-(add-hook 'prog-mode-hook 'line-number-mode t)
-(add-hook 'prog-mode-hook 'column-number-mode t)
+(require 'hlinum)
+(hlinum-activate)
 
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
 (require 'saveplace)
 
-(require 'fill-column-indicator)
-(setq-default fill-column 100)
-; (add-hook 'text-mode-hook (lambda ()
-;                             (turn-on-auto-fill)
-;                             (fci-mode)
-;                             (set-fill-column 80)))
-; (add-hook 'markdown-mode-hook (lambda ()
-;                             (turn-on-auto-fill)
-;                             (fci-mode)
-;                             (set-fill-column 80)))
-
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-(global-fci-mode 1)
 ;;; dired+
 (require 'dired+)
 ;;; multiterm
@@ -88,8 +90,8 @@
 ; flycheck errors on a tooltip (doesnt work on console)
 (when (display-graphic-p (selected-frame))
   (eval-after-load 'flycheck
-    '(custom-set-variables
-      '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))))
+                   '(custom-set-variables
+                      '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))))
 
 ;; esc quits
 ; (defun minibuffer-keyboard-quit ()
@@ -115,3 +117,5 @@
 ;;; keybindings
 (require 'keybinding)
 
+(provide 'init)
+;;; init.el ends here

@@ -5,6 +5,7 @@
 (setq inhibit-startup-screen t
       inhibit-startup-echo-area-message t
       inhibit-startup-message t)
+(setq initial-scratch-message nil)
 ;;; no backup files
 (setq make-backup-files nil)
 ;;; show other pair of brackets
@@ -24,6 +25,8 @@
 (setq-default c-basic-indent 2)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
+(setq-default line-spacing 2)
+(setq case-fold-search t)
 ;;; disable blinking cursor
 (blink-cursor-mode -1)
 
