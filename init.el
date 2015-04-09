@@ -11,9 +11,11 @@
 
 (setq ensure-packages
   '(color-theme-sanityinc-tomorrow
+     tern
      company
      company-tern
      yasnippet
+     swift-mode
      web-mode
      php-mode
      projectile
@@ -21,7 +23,9 @@
      rainbow-delimiters
      hlinum
      powerline
+     magit
      helm
+     helm-ls-git
      helm-projectile
      multi-term
      dired+
@@ -37,20 +41,15 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 ; (add-to-list 'company-backends 'company-tern)
+(setq company-minimum-prefix-length 1)
 
+(eval-after-load 'company
+  '(progn
+     (define-key company-active-map (kbd "C-n") 'company-select-next)
+     (define-key company-active-map (kbd "C-k") 'company-complete)
+     (define-key company-active-map (kbd "C-p") 'company-select-previous)))
 
-(defun bw/company-complete-lambda (arg)
-  (company-complete))
-(setq
-   ;; autocomplete right after '.'
-   company-minimum-prefix-length 0
-   ;; remove echo delay
-   company-echo-delay 0
-   ;; don't complete in certain modes
-   company-global-modes '(not git-commit-mode)
-   ;; make sure evil uses the right completion functions
-   evil-complete-next-func 'bw/company-complete-lambda
-   evil-complete-previous-func 'bw/company-complete-lambda)
+(add-to-list 'company-backends 'company-tern)
 
 (require 'core)
 (require 'ui)
@@ -71,34 +70,34 @@
 ; (global-git-gutter-mode t)
 ; (custom-set-variables '(git-gutter:update-interval 2))
 (fringe-helper-define 'git-gutter-fr:added nil
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX")
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX.")
 
 (fringe-helper-define 'git-gutter-fr:deleted nil
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX")
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX.")
 
 (fringe-helper-define 'git-gutter-fr:modified nil
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX"
-  "....XXXX")
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX."
+  "...XXXX.")
 
 (require 'projectile)
 
