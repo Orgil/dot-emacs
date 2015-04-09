@@ -14,5 +14,4 @@
 (define-key evil-normal-state-map (kbd "C-d") (lambda ()
                         (interactive)
                         (evil-scroll-down nil)))
-(setq evil-move-cursor-back nil)
 (provide 'keybinding)

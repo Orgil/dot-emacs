@@ -12,6 +12,8 @@
 (setq ensure-packages
   '(color-theme-sanityinc-tomorrow
      company
+     company-tern
+     yasnippet
      web-mode
      php-mode
      projectile
@@ -24,6 +26,7 @@
      multi-term
      dired+
      markdown-mode
+     git-gutter-fringe
      php-mode
      flycheck
      flycheck-pos-tip
@@ -31,8 +34,29 @@
   "A list of packages to ensure are installed at launch."
 (ensure-packages-install-missing)
 
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+; (add-to-list 'company-backends 'company-tern)
+
+
+(defun bw/company-complete-lambda (arg)
+  (company-complete))
+(setq
+   ;; autocomplete right after '.'
+   company-minimum-prefix-length 0
+   ;; remove echo delay
+   company-echo-delay 0
+   ;; don't complete in certain modes
+   company-global-modes '(not git-commit-mode)
+   ;; make sure evil uses the right completion functions
+   evil-complete-next-func 'bw/company-complete-lambda
+   evil-complete-previous-func 'bw/company-complete-lambda)
+
 (require 'core)
 (require 'ui)
+
+(require 'yasnippet)
+(yas-global-mode 1)
 
 ;;; webmode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -40,12 +64,50 @@
 (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(require 'git-gutter-fringe)
+(global-git-gutter-mode t)
+; (require 'git-gutter)
+; ;; If you enable global minor mode
+; (global-git-gutter-mode t)
+; (custom-set-variables '(git-gutter:update-interval 2))
+(fringe-helper-define 'git-gutter-fr:added nil
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX")
+
+(fringe-helper-define 'git-gutter-fr:deleted nil
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX")
+
+(fringe-helper-define 'git-gutter-fr:modified nil
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX"
+  "....XXXX")
+
 (require 'projectile)
 
 (require 'neotree)
 (setq neo-window-width 28)
 (global-set-key [f4] 'neotree-toggle)
 (setq projectile-switch-project-action 'neotree-projectile-action)
+(set-display-table-slot standard-display-table 0 ?✂)
+
 
 (add-hook 'neotree-mode-hook
           (lambda ()
@@ -119,3 +181,17 @@
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(fringe ((t (:background "#1d1f21" :foreground "#de935f"))))
+ '(linum ((t (:background "#1d1f21" :foreground "#373b41" :slant normal))))
+ '(linum-highlight-face ((t (:inherit default :background "#1d1f21" :foreground "#f0c674")))))

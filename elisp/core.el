@@ -24,7 +24,10 @@
 (setq-default cursor-type 'bar)
 (setq-default c-basic-indent 2)
 (setq-default tab-width 2)
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil
+              initial-major-mode 'text-mode
+              default-major-mode 'text-mode
+              )
 (setq-default line-spacing 2)
 (setq case-fold-search t)
 ;;; disable blinking cursor

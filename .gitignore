@@ -1,3 +1,5 @@
 elpa/*
 saveplace
 auto-save-list/*
+games/
+projectile-bookmarks.eld
