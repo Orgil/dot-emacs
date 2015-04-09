@@ -38,6 +38,12 @@
   "A list of packages to ensure are installed at launch."
 (ensure-packages-install-missing)
 
+
+(require 'core)
+(require 'ui)
+(require 'helm-config)
+(helm-mode 1)
+
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 ; (add-to-list 'company-backends 'company-tern)
@@ -50,10 +56,6 @@
      (define-key company-active-map (kbd "C-p") 'company-select-previous)))
 
 (add-to-list 'company-backends 'company-tern)
-
-(require 'core)
-(require 'ui)
-
 (require 'yasnippet)
 (yas-global-mode 1)
 
