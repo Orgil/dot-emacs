@@ -24,9 +24,13 @@
      hlinum
      powerline
      magit
+     god-mode
+     evil-leader
+     evil-god-state
      helm
      helm-ls-git
      helm-projectile
+     helm-flycheck
      multi-term
      dired+
      markdown-mode
@@ -153,7 +157,46 @@
   (eval-after-load 'flycheck
                    '(custom-set-variables
                       '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))))
+(require 'helm-flycheck) ;; Not necessary if using ELPA package
+(eval-after-load 'flycheck
+  '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
 
+;;; this should be before evil-mode
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader ",")
+(evil-leader/set-key
+    "a" 'ag-project
+    "A" 'ag
+    "b" 'ido-switch-buffer
+    "B" 'ido-switch-buffer-other-window
+    ; "c" 'mc/mark-next-like-this
+    ; "C" 'mc/mark-all-like-this
+    "d" 'dired-jump
+    ; "e" 'er/expand-region
+    ; "E" 'mc/edit-lines
+    "f" 'ido-find-file
+    "g" 'magit-status
+    "G" 'magit-blame-mode
+    ; "i" 'idomenu
+    ; "j" 'ace-jump-mode
+    ; "J" 'ace-jump-word-mode
+    "k" 'kill-this-buffer
+    "K" 'kill-buffer
+    ; "l" 'linum-mode
+    ; "o" 'occur
+    ; "O" 'browse-url
+    ; "p" 'magit-find-file-completing-read
+    ; "P" 'popwin:popup-last-buffer
+    ; "r" 'bw/recentf-ido-find-file
+    ; "R" 'bookmark-jump
+    ; "s" 'ag-project
+    ; "t" 'bw/open-term
+    ; "T" 'eshell
+    ; "w" 'save-buffer
+    ; "x" 'smex
+    ; "y" 'bury-buffer
+    )
 ;; esc quits
 ; (defun minibuffer-keyboard-quit ()
 ;   (interactive)
@@ -170,10 +213,11 @@
 ; (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 ; (global-set-key [escape] 'evil-exit-emacs-state)
 
-
 ;;; loading permanent evil mode
 (require 'evil)
 (evil-mode 1)
+
+(require 'evil-god-state)
 
 ;;; keybindings
 (require 'keybinding)

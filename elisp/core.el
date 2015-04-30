@@ -6,7 +6,8 @@
       inhibit-startup-echo-area-message t
       inhibit-startup-message t)
 (setq initial-scratch-message nil)
-;;; no backup files
+;;; no backup files no auto-save-mode
+(setq auto-save-default nil)
 (setq make-backup-files nil)
 ;;; show other pair of brackets
 (show-paren-mode t)
