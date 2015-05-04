@@ -1,0 +1,15 @@
+(require 'neotree)
+(global-set-key [f4] 'neotree-toggle)
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
+(add-hook 'neotree-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-local-map (kbd "m a") 'neotree-create-node)
+            (define-key evil-normal-state-local-map (kbd "m d") 'neotree-delete-node)
+            (define-key evil-normal-state-local-map (kbd "m m") 'neotree-rename-node)
+            (define-key evil-normal-state-local-map (kbd "m c") 'neotree-change-root)
+            (define-key evil-normal-state-local-map (kbd "m i") 'neotree-hidden-file-toggle)
+            (define-key evil-normal-state-local-map (kbd "m r") 'neotree-refresh)
+            (define-key evil-normal-state-local-map (kbd "o") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+(provide 'setup-neotree)

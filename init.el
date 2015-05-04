@@ -1,3 +1,6 @@
+(setq user-full-name "Orgil"
+      user-mail-address "orgil.u@gmail.com")
+
 ;;; loading package manager
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -15,6 +18,7 @@
 (ensure-packages-install-missing)
 
 (require 'core)
+(require 'init-functions)
 
 ;;; Plugins
 (require 'setup-evil-mode)
@@ -28,6 +32,8 @@
 (require 'setup-flycheck)
 (require 'setup-git-gutter)
 (require 'setup-irony)
+(require 'setup-neotree)
+(require 'setup-magit)
 
 ; ;;; webmode
 ; (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))

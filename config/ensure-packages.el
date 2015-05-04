@@ -24,6 +24,7 @@
        helm
        helm-descbinds
        helm-swoop
+       helm-make
        helm-projectile
        irony
        yasnippet
@@ -32,11 +33,13 @@
        php-mode
        rainbow-delimiters
        hlinum ;; highlight current line number
-       magit
+       magit ;; git
        markdown-mode
        git-gutter-fringe
        php-mode
+       neotree
        flycheck
+       flycheck-irony
        flycheck-pos-tip
        )
      "A list of packages to ensure are installed at launch.")

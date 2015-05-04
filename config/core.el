@@ -91,10 +91,10 @@
 ;;; line numbers
 (global-linum-mode 1)
 ;;; customize line numbers
-(setq linum-format 
-  (lambda (line) (propertize 
-     (format (let ((w (length (number-to-string (count-lines (point-min) (point-max)))))) 
-       (concat " %" (number-to-string w) "d")) line) 'face 'linum)))
+(setq linum-format
+  (lambda (line) (propertize
+     (format (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
+       (concat " %" (number-to-string w) "d ")) line) 'face 'linum)))
 
 ; (line-number-mode t)
 (column-number-mode t)
@@ -124,6 +124,10 @@
 '(fringe ((t (:background "#1d1f21" :foreground "#de935f"))))
 '(linum ((t (:background "#1d1f21" :foreground "#373b41" :slant normal))))
 '(linum-highlight-face ((t (:inherit default :background "#1d1f21" :foreground "#f0c674")))))
+
+;;; disable default exit
+(global-unset-key "\C-x\C-c")
+(setq confirm-kill-emacs 'y-or-n-p)
 
 (provide 'core)
 ;;; core.el ends here

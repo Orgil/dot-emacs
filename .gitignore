@@ -8,3 +8,5 @@ semanticdb
 games/
 .cache**
 ede-projects.el
+\#*\#
+irony/*

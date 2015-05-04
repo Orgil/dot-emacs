@@ -4,6 +4,7 @@
 (setq projectile-enable-caching t)
 (require 'projectile)
 
+
 (add-to-list 'projectile-globally-ignored-directories "elpa")
 (add-to-list 'projectile-globally-ignored-directories ".cache")
 
@@ -12,4 +13,5 @@
 (setq projectile-switch-project-action 'helm-projectile)
 
 (add-to-list 'helm-projectile-sources-list 'helm-source-projectile-recentf-list)
+
 (provide 'setup-projectile)
