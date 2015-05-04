@@ -3,3 +3,8 @@ saveplace
 auto-save-list/*
 games/
 projectile-bookmarks.eld
+recentf
+semanticdb
+games/
+.cache**
+ede-projects.el
