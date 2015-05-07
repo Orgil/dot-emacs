@@ -94,7 +94,7 @@
 (setq linum-format
   (lambda (line) (propertize
      (format (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-       (concat " %" (number-to-string w) "d ")) line) 'face 'linum)))
+       (concat " %" (number-to-string w) "d \u2502")) line) 'face 'linum)))
 
 ; (line-number-mode t)
 (column-number-mode t)
@@ -129,5 +129,7 @@
 (global-unset-key "\C-x\C-c")
 (setq confirm-kill-emacs 'y-or-n-p)
 
+; (add-hook 'ruby-mode-hook 'superword-mode)
+(add-hook 'prog-mode-hook 'subword-mode)
 (provide 'core)
 ;;; core.el ends here

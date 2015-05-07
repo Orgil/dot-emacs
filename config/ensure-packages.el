@@ -16,6 +16,7 @@
        evil-indent-textobject
        evil-visualstar
        evil-numbers
+       cmake-font-lock
        company
        company-quickhelp
        company-irony
@@ -31,6 +32,7 @@
        swift-mode
        web-mode
        php-mode
+       rainbow-mode
        rainbow-delimiters
        hlinum ;; highlight current line number
        magit ;; git

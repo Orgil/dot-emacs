@@ -82,5 +82,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(fringe ((t (:background "#1d1f21" :foreground "#de935f"))))
- '(linum ((t (:background "#1d1f21" :foreground "#373b41" :slant normal))))
+ '(linum ((t (:background "#222426" :foreground "#40454c" :slant normal))))
  '(linum-highlight-face ((t (:inherit default :background "#1d1f21" :foreground "#f0c674")))))

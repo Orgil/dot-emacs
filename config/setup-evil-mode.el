@@ -2,12 +2,14 @@
 (evil-leader/set-leader ",")
 (evil-leader/set-key
   "f" 'find-file
-  "p f" 'projectile-find-file
   "b" 'switch-to-buffer
   "," 'switch-to-previous-buffer
   "k" 'kill-buffer
   "x" 'helm-M-x
+  "n e" 'flycheck-next-error
+  "p e" 'flycheck-previous-error
   "e" 'flycheck-list-errors
+  "SPC" 'ff-find-other-file
   )
 
 (global-evil-leader-mode)

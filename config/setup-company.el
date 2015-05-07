@@ -1,6 +1,7 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
+
 (setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 1)
 (setq company-show-numbers t)
@@ -29,6 +30,8 @@
     (set-face-attribute 'company-scrollbar-fg nil :background "gray40"))
 
 (add-to-list 'company-backends 'company-c-headers)
+; (delete 'company-semantic company-backends)
+(setq company-c-headers-path-system "/usr/local/include/c++/4.9.2/")
 ; (when (executable-find "tern")
 ; (after "company-tern-autoloads"
 ;        (add-to-list 'company-backends 'company-tern)))

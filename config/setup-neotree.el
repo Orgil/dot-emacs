@@ -1,6 +1,7 @@
 (require 'neotree)
 (global-set-key [f4] 'neotree-toggle)
 (setq projectile-switch-project-action 'neotree-projectile-action)
+(setq helm-projectile-switch-project-action 'neotree-projectile-action)
 
 (add-hook 'neotree-mode-hook
           (lambda ()
