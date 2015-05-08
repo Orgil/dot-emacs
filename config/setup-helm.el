@@ -39,6 +39,7 @@
 
 
 (require 'helm-descbinds)
+(helm-descbinds-mode)
 
 (require 'helm-swoop)
 (setq helm-swoop-pre-input-function #'ignore)

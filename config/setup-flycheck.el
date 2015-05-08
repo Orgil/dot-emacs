@@ -14,5 +14,5 @@
 
 (add-hook 'c++-mode-hook
           (lambda () (setq flycheck-clang-include-path
-                           (list (expand-file-name "~/local/include/")))))
+                           (list (expand-file-name "/usr/local/include/")))))
 (provide 'setup-flycheck)

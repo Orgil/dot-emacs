@@ -2,6 +2,7 @@
 (evil-leader/set-leader ",")
 (evil-leader/set-key
   "f" 'find-file
+  "F" 'helm-projectile-find-file
   "b" 'switch-to-buffer
   "," 'switch-to-previous-buffer
   "k" 'kill-buffer
@@ -9,20 +10,27 @@
   "n e" 'flycheck-next-error
   "p e" 'flycheck-previous-error
   "e" 'flycheck-list-errors
-  "SPC" 'ff-find-other-file
+  "SPC" 'origami-toggle-node
+  "i" 'ff-find-other-file
+  "a" 'helm-ag
+  "A" 'helm-ag-project-root
+  "g i" 'magit-status
+  "d" 'origami-toggle-node
+  "D" 'origami-recursively-toggle-node
   )
+(evil-leader/set-key-for-mode 'web-mode "d" 'web-mode-fold-or-unfold)
 
 (global-evil-leader-mode)
 
 (require 'evil)
 (evil-mode 1)
 
-
 ;;; window navigation
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
 (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+(define-key evil-normal-state-map (kbd "<F6>") 'undotree)
 
 ;;; j k navigation visual line
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
@@ -54,15 +62,15 @@
 
 
 (require 'evil-surround)
-(global-evil-surround-mode t)
+(global-evil-surround-mode 1)
 
 (require 'evil-exchange)
 (evil-exchange-install)
 
 (require 'evil-matchit)
-(defun evilmi-customize-keybinding ()
-  (evil-define-key 'normal evil-matchit-mode-map
-                   "%" 'evilmi-jump-items))
+; (defun evilmi-customize-keybinding ()
+;   (evil-define-key 'normal evil-matchit-mode-map
+;                    "%" 'evilmi-jump-items))
 (global-evil-matchit-mode t)
 
 

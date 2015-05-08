@@ -7,6 +7,7 @@
 (defvar ensure-packages
      '(
        color-theme-sanityinc-tomorrow
+       ag
        evil
        evil-leader
        evil-nerd-commenter
@@ -22,15 +23,20 @@
        company-irony
        smart-mode-line
        projectile
+       origami ;;; for folding
+       dash
        helm
+       helm-dash
        helm-descbinds
        helm-swoop
        helm-make
        helm-projectile
+       helm-ag
        irony
        yasnippet
        swift-mode
        web-mode
+       handlebars-mode
        php-mode
        rainbow-mode
        rainbow-delimiters
@@ -39,7 +45,9 @@
        markdown-mode
        git-gutter-fringe
        php-mode
+       emmet-mode
        neotree
+       js2-mode
        flycheck
        flycheck-irony
        flycheck-pos-tip

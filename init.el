@@ -33,38 +33,21 @@
 (require 'setup-git-gutter)
 (require 'setup-irony)
 (require 'setup-neotree)
+(require 'setup-webmode)
+(require 'setup-origami)
+(require 'setup-handlebars-mode)
+(require 'setup-emmet-mode)
 (require 'setup-magit)
+(require 'setup-dash)
+(require 'setup-js2-mode)
 
-; ;;; webmode
-; (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-; (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-; (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
-; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;
-; (setq save-place-file "~/.emacs.d/saveplace")
-; (setq-default save-place t)
-; (require 'saveplace)
+(require 'saveplace)
+(setq save-place-file "~/.emacs.d/saveplace")
+(setq-default save-place t)
 ;
 ; ;;; multiterm
 ; (require 'multi-term)
 ; (setq multi-term-program "/bin/zsh")
-;
-; ;; esc quits
-; ; (defun minibuffer-keyboard-quit ()
-; ;   (interactive)
-; ;   (if (and delete-selection-mode transient-mark-mode mark-active)
-; ;       (setq deactivate-mark  t)
-; ;     (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
-; ;     (abort-recursive-edit)))
-; ; (define-key evil-normal-state-map [escape] 'keyboard-quit)
-; ; (define-key evil-visual-state-map [escape] 'keyboard-quit)
-; ; (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
-; ; (define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
-; ; (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
-; ; (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
-; ; (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
-; ; (global-set-key [escape] 'evil-exit-emacs-state)
-;
 ;
 (provide 'init)
 ;;; init.el ends here

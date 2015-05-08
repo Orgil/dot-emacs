@@ -31,7 +31,7 @@
 
 (add-to-list 'company-backends 'company-c-headers)
 ; (delete 'company-semantic company-backends)
-(setq company-c-headers-path-system "/usr/local/include/c++/4.9.2/")
+(setq company-c-headers-path-system "/usr/local/include/")
 ; (when (executable-find "tern")
 ; (after "company-tern-autoloads"
 ;        (add-to-list 'company-backends 'company-tern)))
