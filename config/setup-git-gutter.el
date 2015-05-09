@@ -5,33 +5,51 @@
 ; (global-git-gutter-mode t)
 ; (custom-set-variables '(git-gutter:update-interval 2))
 (fringe-helper-define 'git-gutter-fr:added nil
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX..")
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "........"
+  "........"
+  )
 
 (fringe-helper-define 'git-gutter-fr:deleted nil
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX..")
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "........"
+  "........"
+  )
 
 (fringe-helper-define 'git-gutter-fr:modified nil
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX..")
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "XX......"
+  "........"
+  "........"
+  )
 
 (provide 'setup-git-gutter)
