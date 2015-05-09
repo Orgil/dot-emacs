@@ -5,7 +5,7 @@
   "F" 'helm-projectile-find-file
   "b" 'switch-to-buffer
   "," 'switch-to-previous-buffer
-  "k" 'kill-buffer
+  "k" 'kill-buffer-and-window
   "x" 'helm-M-x
   "n e" 'flycheck-next-error
   "p e" 'flycheck-previous-error
@@ -30,7 +30,10 @@
 (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
-(define-key evil-normal-state-map (kbd "<F6>") 'undotree)
+(define-key evil-normal-state-map (kbd "C-[") 'flycheck-previous-error)
+(define-key evil-normal-state-map (kbd "C-]") 'flycheck-next-error)
+(define-key evil-normal-state-map [f1] 'helm-dash-at-point)
+(define-key evil-normal-state-map [f6] 'undolist)
 
 ;;; j k navigation visual line
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)

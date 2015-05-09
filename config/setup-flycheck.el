@@ -12,7 +12,6 @@
 (eval-after-load 'flycheck
                  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
-(add-hook 'c++-mode-hook
-          (lambda () (setq flycheck-clang-include-path
-                           (list (expand-file-name "/usr/local/include/")))))
+(setq flycheck-clang-include-path
+                           (list (expand-file-name "/usr/local/include/")))
 (provide 'setup-flycheck)

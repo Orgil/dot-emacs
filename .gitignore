@@ -10,3 +10,5 @@ games/
 ede-projects.el
 \#*\#
 irony/*
+eshell/*
+url/*
