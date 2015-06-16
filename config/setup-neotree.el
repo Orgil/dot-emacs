@@ -5,12 +5,18 @@
 
 (add-hook 'neotree-mode-hook
           (lambda ()
+            (define-key evil-normal-state-local-map (kbd "i") 'neotree-enter-horizontal-split)
+            (define-key evil-normal-state-local-map (kbd "s") 'neotree-enter-vertical-split)
+            (define-key evil-normal-state-local-map (kbd "p") 'neotree-select-up-node)
             (define-key evil-normal-state-local-map (kbd "m a") 'neotree-create-node)
             (define-key evil-normal-state-local-map (kbd "m d") 'neotree-delete-node)
             (define-key evil-normal-state-local-map (kbd "m m") 'neotree-rename-node)
-            (define-key evil-normal-state-local-map (kbd "m c") 'neotree-change-root)
+            (define-key evil-normal-state-local-map (kbd "C") 'neotree-change-root)
             (define-key evil-normal-state-local-map (kbd "m i") 'neotree-hidden-file-toggle)
-            (define-key evil-normal-state-local-map (kbd "m r") 'neotree-refresh)
+            (define-key evil-normal-state-local-map (kbd "R") 'neotree-refresh)
             (define-key evil-normal-state-local-map (kbd "o") 'neotree-enter)
             (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+
+(add-hook 'web-mode-hook  (lambda ()
+    (define-key evil-normal-state-local-map (kbd "SPC") 'web-mode-fold-or-unfold)))
 (provide 'setup-neotree)

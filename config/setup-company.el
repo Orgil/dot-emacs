@@ -31,7 +31,7 @@
 
 (add-to-list 'company-backends 'company-c-headers)
 ; (delete 'company-semantic company-backends)
-(setq company-c-headers-path-system "/usr/local/include/")
+(setq company-c-headers-path-system flycheck-clang-include-path)
 ; (when (executable-find "tern")
 ; (after "company-tern-autoloads"
 ;        (add-to-list 'company-backends 'company-tern)))

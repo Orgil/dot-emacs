@@ -24,6 +24,7 @@
        smart-mode-line
        projectile
        origami ;;; for folding
+       realgud
        dash
        helm
        helm-dash
@@ -44,6 +45,8 @@
        magit ;; git
        markdown-mode
        git-gutter-fringe
+       android-mode
+       gradle-mode
        php-mode
        emmet-mode
        neotree
