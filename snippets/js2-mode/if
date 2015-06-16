@@ -3,7 +3,7 @@
 # key: if
 # binding: direct-keybinding
 # --
-if (${1:enumerate})
+if (${1:condition})
 {
 $0
 } // $1

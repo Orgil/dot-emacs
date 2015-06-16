@@ -24,8 +24,8 @@
        smart-mode-line
        projectile
        origami ;;; for folding
-       realgud
-       dash
+       realgud ;;; c debuging
+       dash ;;; docs
        helm
        helm-dash
        helm-descbinds
@@ -37,6 +37,7 @@
        yasnippet
        swift-mode
        web-mode
+       json-mode
        handlebars-mode
        php-mode
        rainbow-mode
