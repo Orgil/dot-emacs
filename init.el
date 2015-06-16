@@ -69,6 +69,7 @@
  '(global-semantic-idle-scheduler-mode t)
  '(global-semantic-idle-summary-mode t)
  '(global-semanticdb-minor-mode t)
+ '(js2-basic-offset 2)
  '(neo-theme (quote nerd))
  '(semantic-mode t))
 (custom-set-faces

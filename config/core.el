@@ -27,6 +27,9 @@
 (setq-default cursor-type 'box)
 (setq-default tab-width 2)
 
+;; Set standard intent size to 4
+(setq standard-indent 4)
+
 (setq-default indent-tabs-mode nil
               initial-major-mode 'text-mode
               default-major-mode 'text-mode
