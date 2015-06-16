@@ -13,6 +13,11 @@
      (define-key company-active-map (kbd "C-k") 'company-complete)
      (define-key company-active-map (kbd "C-p") 'company-select-previous)))
 
+(add-hook 'company-mode-hook (lambda ()
+  (substitute-key-definition 'company-complete-common
+                             'company-yasnippet-or-completion
+                             company-active-map)))
+
 (setq company-dabbrev-downcase nil)
   (setq company-dabbrev-ignore-case t)
 
@@ -46,5 +51,11 @@
   (require 'company-quickhelp)
   (setq company-quickhelp-delay 0.1)
   (company-quickhelp-mode t))
+
+(defun company-yasnippet-or-completion ()
+  (interactive)
+  (let ((yas-fallback-behavior nil))
+    (unless (yas-expand)
+      (call-interactively #'company-complete-common))))
 
 (provide 'setup-company)
