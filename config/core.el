@@ -52,7 +52,7 @@
 (setq ring-bell-function 'ignore)
 
 ;;; auto indent
-(electric-indent-mode +1)
+; (electric-indent-mode +1)
 
 ; ;; A small minor mode to use a big fringe
 ; (defvar bzg-big-fringe-mode nil)

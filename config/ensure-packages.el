@@ -52,6 +52,8 @@
        emmet-mode
        neotree
        js2-mode
+       tern
+       company-tern
        flycheck
        flycheck-irony
        flycheck-pos-tip
