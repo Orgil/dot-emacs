@@ -1,8 +1,8 @@
 (require 'evil-leader)
 (evil-leader/set-leader ",")
 (evil-leader/set-key
-  "f" 'find-file
-  "F" 'helm-projectile-find-file
+  "F" 'find-file
+  "f" 'helm-projectile-find-file
   "b" 'switch-to-buffer
   "," 'switch-to-previous-buffer
   "k" 'kill-buffer-and-window
@@ -10,15 +10,14 @@
   "n e" 'flycheck-next-error
   "p e" 'flycheck-previous-error
   "e" 'flycheck-list-errors
-  "SPC" 'origami-toggle-node
   "i" 'ff-find-other-file
-  "a" 'helm-ag
-  "A" 'helm-ag-project-root
-  "g i" 'magit-status
+  "A" 'helm-ag
+  "a" 'helm-ag-project-root
+  "g s t" 'magit-status
   "d" 'origami-toggle-node
   "D" 'origami-recursively-toggle-node
   )
-(evil-leader/set-key-for-mode 'web-mode "d" 'web-mode-fold-or-unfold)
+;; (evil-leader/set-key-for-mode 'web-mode "d" 'web-mode-fold-or-unfold)
 
 (global-evil-leader-mode)
 

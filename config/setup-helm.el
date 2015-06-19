@@ -4,6 +4,11 @@
 
 (setq helm-quick-update t)
 (setq helm-bookmark-show-location t)
+(setq helm-display-header-line nil)
+(set-face-attribute 'helm-source-header nil :height 0.1)
+(helm-autoresize-mode 1)
+(setq helm-autoresize-max-height 20)
+(setq helm-autoresize-min-height 20)
 
 ;;; enable fuzzy matching
 (setq helm-lisp-fuzzy-completion t)

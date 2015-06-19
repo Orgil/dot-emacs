@@ -21,6 +21,7 @@
        company
        company-quickhelp
        company-irony
+       company-c-headers
        smart-mode-line
        projectile
        origami ;;; for folding
