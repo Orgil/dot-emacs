@@ -40,7 +40,9 @@
 (require 'setup-magit)
 (require 'setup-dash)
 (require 'setup-cedet)
+(require 'setup-scss-mode)
 (require 'setup-js2-mode)
+(require 'setup-js2-refactor)
 
 (require 'saveplace)
 (setq save-place-file "~/.emacs.d/saveplace")

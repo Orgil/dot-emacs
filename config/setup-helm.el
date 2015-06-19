@@ -4,12 +4,6 @@
 
 (setq helm-quick-update t)
 (setq helm-bookmark-show-location t)
-(setq helm-display-header-line nil)
-(set-face-attribute 'helm-source-header nil :height 0.1)
-(helm-autoresize-mode 1)
-(setq helm-autoresize-max-height 20)
-(setq helm-autoresize-min-height 20)
-
 ;;; enable fuzzy matching
 (setq helm-lisp-fuzzy-completion t)
 (setq helm-recentf-fuzzy-match t)
@@ -38,6 +32,12 @@
       helm-ff-skip-boring-files             t
       helm-boring-file-regexp-list '("~$" "\\.\\#"  "\\.elc$")
       helm-ff-file-name-history-use-recentf t)
+
+(helm-autoresize-mode 1)
+(setq helm-autoresize-max-height 20)
+(setq helm-autoresize-min-height 20)
+(setq helm-display-header-line nil)
+(set-face-attribute 'helm-source-header nil :height 0.1)
 
 (defun my-c++-mode-hook ()
   (define-key c++-mode-map (kbd "C-;") 'helm-make-projectile))

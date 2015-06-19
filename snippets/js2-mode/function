@@ -1,8 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: if
-# key: if
+# name: function
+# key: fn
 # binding: direct-keybinding
 # --
-if ($1) {
+function ($1) {
 $0
 }
