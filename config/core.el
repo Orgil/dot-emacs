@@ -4,6 +4,8 @@
       inhibit-startup-message t
       initial-scratch-message nil)
 
+;;; disabling autosave
+(setq auto-save-default nil)
 ;;; no backup files
 (setq make-backup-files nil)
 ;;; show other pair of brackets
