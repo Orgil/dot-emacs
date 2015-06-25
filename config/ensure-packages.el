@@ -53,7 +53,6 @@
        emmet-mode
        neotree
        js2-mode
-       js2-refactor
        scss-mode
        tern
        company-tern
