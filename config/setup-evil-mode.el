@@ -33,6 +33,8 @@
 (define-key evil-normal-state-map (kbd "C-]") 'flycheck-next-error)
 (define-key evil-normal-state-map [f1] 'helm-dash-at-point)
 (define-key evil-normal-state-map [f6] 'undolist)
+;;; comment
+(define-key evil-normal-state-map (kbd "g c") 'evilnc-comment-or-uncomment-lines)
 
 ;;; j k navigation visual line
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
@@ -85,7 +87,6 @@
 
 (require 'evil-numbers)
 
-(setq evilnc-hotkey-comment-operator "gc")
 (require 'evil-nerd-commenter)
 
 (provide 'setup-evil-mode)
