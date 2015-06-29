@@ -19,7 +19,7 @@
                            (list (expand-file-name "/usr/local/include/")))
 
 ;; Flycheck JSCS
-(flycheck-def-config-file-var flycheck-jscs javascript-jscs ".jscs.json"
+(flycheck-def-config-file-var flycheck-jscs javascript-jscs ".jscsrc"
                               :safe #'stringp)
 
 (flycheck-define-checker javascript-jscs
