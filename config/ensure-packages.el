@@ -41,6 +41,7 @@
        json-mode
        handlebars-mode
        php-mode
+       robe
        rainbow-mode
        rainbow-delimiters
        hlinum ;; highlight current line number

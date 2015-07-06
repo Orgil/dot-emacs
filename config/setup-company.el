@@ -44,6 +44,9 @@
 ; (after "company-tern-autoloads"
 ;        (add-to-list 'company-backends 'company-tern)))
 
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
+
 ; (require 'helm-company)
 ; (eval-after-load 'company
 ;   '(progn
