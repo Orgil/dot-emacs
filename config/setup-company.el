@@ -37,7 +37,7 @@
 ;   (set-face-attribute 'company-scrollbar-fg nil :background "gray40"))
 
 (setq company-c-headers-path-system flycheck-clang-include-path)
-(add-to-list 'company-backends 'company-tern)
+; (add-to-list 'company-backends 'company-tern)
 (add-to-list 'company-backends 'company-c-headers)
 ; (delete 'company-semantic company-backends)
 ; (when (executable-find "tern")

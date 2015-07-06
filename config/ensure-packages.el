@@ -51,11 +51,12 @@
        gradle-mode
        php-mode
        emmet-mode
+       ember-mode
        neotree
        js2-mode
        scss-mode
-       tern
-       company-tern
+       ; tern
+       ; company-tern
        flycheck
        flycheck-irony
        flycheck-pos-tip

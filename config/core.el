@@ -4,6 +4,10 @@
       inhibit-startup-message t
       initial-scratch-message nil)
 
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+(setq create-lockfiles nil)
+
 ;;; disabling autosave
 (setq auto-save-default nil)
 ;;; no backup files
