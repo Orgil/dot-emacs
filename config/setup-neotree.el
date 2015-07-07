@@ -11,6 +11,7 @@
             (define-key evil-normal-state-local-map (kbd "m a") 'neotree-create-node)
             (define-key evil-normal-state-local-map (kbd "m d") 'neotree-delete-node)
             (define-key evil-normal-state-local-map (kbd "m m") 'neotree-rename-node)
+            (define-key evil-normal-state-local-map (kbd "m c") 'neotree-copy-node)
             (define-key evil-normal-state-local-map (kbd "C") 'neotree-change-root)
             (define-key evil-normal-state-local-map (kbd "m i") 'neotree-hidden-file-toggle)
             (define-key evil-normal-state-local-map (kbd "R") 'neotree-refresh)
