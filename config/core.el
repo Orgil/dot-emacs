@@ -8,6 +8,7 @@
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (setq create-lockfiles nil)
 
+(setq-default mode-require-final-newline nil)
 ;;; disabling autosave
 (setq auto-save-default nil)
 ;;; no backup files
